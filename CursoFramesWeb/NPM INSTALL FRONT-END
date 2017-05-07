@@ -1,7 +1,7 @@
 npm install admin-lte --save-dev
 npm angular --save-dev
 npm angular-animate --save-dev
-npm angular-toast --save-dev
+npm angular-toastr --save-dev
 npm angular-ui-router --save-dev
 npm font-awesome --save-dev
 npm babel-preset-es2015 --save-dev
