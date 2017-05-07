@@ -1,0 +1,20 @@
+npm install admin-lte --save-dev
+npm angular --save-dev
+npm angular-animate --save-dev
+npm angular-toast --save-dev
+npm angular-ui-router --save-dev
+npm font-awesome --save-dev
+npm babel-preset-es2015 --save-dev
+npm gulp --save-dev
+npm gulp-babel --save-dev
+npm gulp-concat --save-dev
+npm gulp-htmlmin --save-dev
+npm gulp-uglify --save-dev
+npm gulp-uglifycss --save-dev
+npm gulp-util --save-dev
+npm gulp-watch --save-dev
+npm gulp-webserver --save-dev
+
+OR 
+
+npm install admin-lte npm angular npm angular-animate npm angular-toast npm angular-ui-router npm font-awesome npm babel-preset-es2015 npm gulp npm gulp-babel npm gulp-concat npm gulp-htmlmin npm gulp-uglify npm gulp-uglifycss npm gulp-util npm gulp-watch npm gulp-webserver --save-dev
