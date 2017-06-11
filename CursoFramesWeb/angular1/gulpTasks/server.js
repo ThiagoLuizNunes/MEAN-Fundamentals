@@ -11,8 +11,12 @@ gulp.task('server', ['watch'], function() {
 })
 
 gulp.task('watch', function() {
+  //Se modificou html
   watch('app/**/*.html', () => gulp.start('app.html'))
+  //Se modificou css
   watch('app/**/*.css', () => gulp.start('app.css'))
+  //Se modificou js
   watch('app/**/*.js', () => gulp.start('app.js'))
+  //Se modificou arquivos em assets 
   watch('assets/**/*.*', () => gulp.start('app.assets'))
 })
