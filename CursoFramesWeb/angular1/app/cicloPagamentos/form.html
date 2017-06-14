@@ -1,11 +1,11 @@
 <div class="form">
   <div class="box-body">
     <field id="nome" label="Nome" grid="12 6 4" placeholder="Informe o Nome"
-        model="cpCrtl.cicloPagamento.nome"></field>
+        model="cpCtrl.cicloPagamento.nome"></field>
     <field id="mes" label="Mês" grid="12 6 4" placeholder="Informe o Mês"
-        model="cpCrtl.cicloPagamento.mes" type="number"></field>
+        type="number" model="cpCtrl.cicloPagamento.mes"></field>
     <field id="ano" label="Ano" grid="12 6 4" placeholder="Informe o Ano"
-        model="cpCrtl.cicloPagamento.ano" type="number"></field>
+        type="number" model="cpCtrl.cicloPagamento.ano"></field>
   </div>
   <div class="box-footer">
     <button class="btn btn-primary" ng-click="cpCtrl.create()">Incluir</button>
