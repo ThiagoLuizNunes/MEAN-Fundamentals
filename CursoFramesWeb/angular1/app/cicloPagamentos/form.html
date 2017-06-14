@@ -8,9 +8,10 @@
         type="number" model="cpCtrl.cicloPagamento.ano"></field>
   </div>
   <div class="box-footer">
-    <button class="btn btn-primary" ng-click="cpCtrl.create()">Incluir</button>
-    <button class="btn btn-info">Alterar</button>
-    <button class="btn btn-danger">Excluir</button>
+    <button class="btn btn-primary" ng-click="cpCtrl.create()"
+      ng-if="cpCtrl.tabList">Incluir</button>
+    <button class="btn btn-info" ng-if="cpCtrl.tabUpdate">Alterar</button>
+    <button class="btn btn-danger" ng-if="cpCtrl.tabDelete">Excluir</button>
     <button class="btn btn-default">Cancelar</button>
   </div>
 </div>

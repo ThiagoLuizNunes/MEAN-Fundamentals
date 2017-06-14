@@ -2,21 +2,19 @@
   angular.module('primeiraApp').controller('CicloPagamentoCtrl', [
     '$http',
     'msgs',
+    'tabs',
     CicloPagamentoController
   ])
 
-  function CicloPagamentoController($http, msgs){
+  function CicloPagamentoController($http, msgs, tabs){
     const vm = this
     const url = 'http://localhost:3003/api/cicloPagamento/'
-    // vm.cicloPagamento = {
-    //   nome: 'Nome',
-    //   mes: 1,
-    //   ano: 2017
-    // }
+
     vm.refresh = function () {
       $http.get(url).then(function (response) {
         vm.cicloPagamento = {}
         vm.cicloPagamentos = response.data
+        tabs.show(vm, {tabList: true, tabCreate: true})
         console.log(response);
       })
     }

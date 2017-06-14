@@ -3,32 +3,36 @@
 <section class="content">
   <div class="nav-tabs-custom" ng-controller="CicloPagamentoCtrl as cpCtrl">
     <ul class="nav nav-tabs">
-      <li>
+      <li ng-if="cpCtrl.tabList">
         <a href data-target="#tabList" data-toggle="tab">
           <i class="fa fa-bars"></i> Lista
         </a>
       </li>
-      <li>
+      <li ng-if="cpCtrl.tabCreate">
         <a href data-target="#tabCreate" data-toggle="tab">
           <i class="fa fa-plus"></i> Incluir
         </a>
       </li>
-      <li>
+      <li ng-if="cpCtrl.tabUpdate">
         <a href data-target="#tabUpdate" data-toggle="tab">
           <i class="fa fa-pencil"></i> Alterar
         </a>
       </li>
-      <li>
+      <li ng-if="cpCtrl.tabDelete">
         <a href data-target="#tabDelete" data-toggle="tab">
           <i class="fa fa-trash-o"></i> Excluir
         </a>
       </li>
     </ul>
     <div class="tab-content">
-      <div class="tab-pane" id="tabList" ng-include="'cicloPagamentos/list.html'">  <h1>OIIIIIIIIIII</h1></div>
-      <div class="tab-pane" id="tabCreate" ng-include="'cicloPagamentos/form.html'"></div>
-      <div class="tab-pane" id="tabUpdate" ng-include="'cicloPagamentos/form.html'"></div>
-      <div class="tab-pane" id="tabDelete" ng-include="'cicloPagamentos/form.html'"></div>
+      <div class="tab-pane" id="tabList" ng-include="'cicloPagamentos/list.html'"
+        ng-if="cpCtrl.tabList"></div>
+      <div class="tab-pane" id="tabCreate" ng-include="'cicloPagamentos/form.html'"
+        ng-if="cpCtrl.tabCreate"></div>
+      <div class="tab-pane" id="tabUpdate" ng-include="'cicloPagamentos/form.html'"
+        ng-if="cpCtrl.tabUpdate"></div>
+      <div class="tab-pane" id="tabDelete" ng-include="'cicloPagamentos/form.html'"
+        ng-if="cpCtrl.tabDelete"></div>
     </div>
   </div>
 </section>
