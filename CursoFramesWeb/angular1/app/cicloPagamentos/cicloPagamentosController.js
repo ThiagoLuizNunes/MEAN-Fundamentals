@@ -18,6 +18,7 @@
         console.log(response);
       })
     }
+
     vm.create = function () {
       $http.post(url, vm.cicloPagamento).then(function (response) {
         vm.cicloPagamento = {}
@@ -26,6 +27,16 @@
         //Errors foi definido no backend
         msgs.addError(response.data.errors)
       })
+    }
+
+    vm.showTabUpdate = function(cicloPagamento) {
+      vm.cicloPagamento = cicloPagamento
+      tabs.show(vm, {tabUpdate: true})
+    }
+
+    vm.showTabDelete = function(cicloPagamento) {
+      vm.cicloPagamento = cicloPagamento
+      tabs.show(vm, {tabDelete: true})
     }
     vm.refresh()
   }
