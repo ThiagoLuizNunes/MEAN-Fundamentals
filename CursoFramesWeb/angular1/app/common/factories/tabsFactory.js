@@ -13,7 +13,6 @@
       owner.tabCreate = tabCreate
       owner.tabUpdate = tabUpdate
       owner.tabDelete = tabDelete
-      console.log('FACTORY TAB');
     }
     return { show }
   }

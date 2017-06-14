@@ -8,7 +8,7 @@
 
   function CicloPagamentoController($http, msgs, tabs){
     const vm = this
-    const url = 'http://localhost:3003/api/cicloPagamento/'
+    const url = 'http://localhost:3003/api/cicloPagamento'
 
     vm.refresh = function () {
       $http.get(url).then(function (response) {
@@ -38,6 +38,19 @@
       vm.cicloPagamento = cicloPagamento
       tabs.show(vm, {tabDelete: true})
     }
+
+    vm.delete = function() {
+      const deleteUrl = `${url}/${vm.cicloPagamento._id}`
+      console.log('PASSEI URL');
+      console.log(deleteUrl);
+      $http.delete(deleteUrl, vm.cicloPagamento).then(function (response) {
+        vm.refresh()
+        msgs.addSuccess('Operação realizada com sucesso!')
+      }).catch(function (response) {
+        msgs.addError(response.data.errors)
+      })
+    }
+
     vm.refresh()
   }
 })()
