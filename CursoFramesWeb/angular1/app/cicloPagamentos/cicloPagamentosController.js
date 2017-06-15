@@ -12,7 +12,7 @@
 
     vm.refresh = function () {
       $http.get(url).then(function (response) {
-        vm.cicloPagamento = {}
+        vm.cicloPagamento = {creditos:[{}], debitos: [{}]}
         vm.cicloPagamentos = response.data
         tabs.show(vm, {tabList: true, tabCreate: true})
         console.log(response);
