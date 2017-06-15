@@ -2,7 +2,8 @@
   angular.module('primeiraApp').factory('tabs', [ TabsFactory ])
 
   function TabsFactory() {
-
+    /*Exibe apenas as tabelas com propriedade TRUE*/
+    /*OBJECT DESTRUCTURING*/
     function show(owner, {
       tabList = false,
       tabCreate = false,

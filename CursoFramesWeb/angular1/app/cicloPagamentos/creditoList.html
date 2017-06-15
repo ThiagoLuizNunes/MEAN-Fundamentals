@@ -18,12 +18,12 @@
           ng-readonly="cpCtrl.tabDelete" type="number"/>
         </td>
         <td class="table-actions">
-          <button class="btn btn-success" ng-class="{disabled: cpCtrl.tabDelete}">
-              <i class="fa fa-plus"></i></button>
-          <button class="btn btn-warning" ng-class="{disabled: cpCtrl.tabDelete}">
-              <i class="fa fa-clone"></i></button>
-          <button class="btn btn-danger" ng-class="{disabled: cpCtrl.tabDelete}">
-              <i class="fa fa-trash-o"></i></button>
+          <button class="btn btn-success" ng-class="{disabled: cpCtrl.tabDelete}"
+            ng-click="cpCtrl.addCredito($index)"><i class="fa fa-plus"></i></button>
+          <button class="btn btn-warning" ng-class="{disabled: cpCtrl.tabDelete}"
+            ng-click="cpCtrl.cloneCredito($index,credito)"><i class="fa fa-clone"></i></button>
+          <button class="btn btn-danger" ng-class="{disabled: cpCtrl.tabDelete}"
+            ng-click="cpCtrl.deleteCredito($index)"><i class="fa fa-trash-o"></i></button>
         </td>
       </tr>
     </tbody>
