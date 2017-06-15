@@ -39,10 +39,18 @@
       tabs.show(vm, {tabDelete: true})
     }
 
+    vm.update = function() {
+      const updateUrl = `${url}/${vm.cicloPagamento._id}`
+      $http.put(updateUrl, vm.cicloPagamento).then(function(response) {
+        vm.refresh()
+        msgs.addSuccess('Operação realizada com sucesso!')
+      }).catch(function(response) {
+        msgs.addError(response.data.errors)
+      })
+    }
+
     vm.delete = function() {
       const deleteUrl = `${url}/${vm.cicloPagamento._id}`
-      console.log('PASSEI URL');
-      console.log(deleteUrl);
       $http.delete(deleteUrl, vm.cicloPagamento).then(function (response) {
         vm.refresh()
         msgs.addSuccess('Operação realizada com sucesso!')

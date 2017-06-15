@@ -10,7 +10,8 @@
   <div class="box-footer">
     <button class="btn btn-primary" ng-click="cpCtrl.create()"
       ng-if="cpCtrl.tabList">Incluir</button>
-    <button class="btn btn-info" ng-if="cpCtrl.tabUpdate">Alterar</button>
+    <button class="btn btn-info" ng-if="cpCtrl.tabUpdate"
+      ng-click="cpCtrl.update()">Alterar</button>
     <button class="btn btn-danger" ng-if="cpCtrl.tabDelete"
       ng-click="cpCtrl.delete()">Excluir</button>
     <button class="btn btn-default" ng-click="cpCtrl.refresh()">Cancelar</button>
