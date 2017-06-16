@@ -1,10 +1,49 @@
 <content-header name="Dashboard" small="Versão 1.0"></content-header>
 
 <section class="content" ng-controller="DashboardCtrl as dash">
-  <value-box grid="4" color-class="bg-green" value="R$ {{ dash.credito | number: 2 }}"
-             text="Total de Créditos" icon-class="fa fa-bank"></value-box>
-  <value-box grid="4" color-class="bg-red" value="R$ {{ dash.debito | number: 2 }}"
-             text="Total de Débitos" icon-class="fa fa-credit-card"></value-box>
-  <value-box grid="4" color-class="bg-blue" value="R$ {{ dash.total | number: 2 }}"
-             text="Total de Consolidado" icon-class="fa fa-money"> </value-box>
+  <div class="row">
+    <value-box grid="12 4" color-class="bg-green" value="R$ {{ dash.credito | number: 2 }}"
+      text="Total de Créditos" icon-class="fa fa-bank"></value-box>
+    <value-box grid="12 4" color-class="bg-red" value="R$ {{ dash.debito | number: 2 }}"
+      text="Total de Débitos" icon-class="fa fa-credit-card"></value-box>
+    <value-box grid="12 4" color-class="bg-blue" value="R$ {{ dash.total | number: 2 }}"
+      text="Total de Consolidado" icon-class="fa fa-money"> </value-box>
+
+    <!-- <div class="col-xs-12 col-sm-4">
+      <div class="small-box bg-green">
+        <div class="inner">
+          <h3>R$ {{ dash.credito | number: 2}}</h3>
+          <p>Total de Créditos</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-bank"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="small-box bg-blue">
+        <div class="inner">
+          <h3>R$ {{ dash.debito | number: 2}}</h3>
+          <p>Total de Débitos</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-credit-card"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="small-box bg-red">
+        <div class="inner">
+          <h3>R$ {{ dash.total | number: 2}}</h3>
+          <p>Total Consolidado</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-money"></i>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
 </section>
