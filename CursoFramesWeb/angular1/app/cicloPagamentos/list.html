@@ -10,9 +10,9 @@
     </thead>
     <tbody>
       <tr ng-repeat="pagamento in cpCtrl.cicloPagamentos">
-        <td>{{ pagamento.nome }}</td>
-        <td>{{ pagamento.mes }}</td>
-        <td>{{ pagamento.ano }}</td>
+        <td>{{:: pagamento.nome }}</td>
+        <td>{{:: pagamento.mes }}</td>
+        <td>{{:: pagamento.ano }}</td>
         <td class="table-actions">
           <button class="btn btn-warning" ng-click="cpCtrl.showTabUpdate(pagamento)">
             <i class="fa fa-pencil"></i>
