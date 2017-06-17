@@ -3,7 +3,6 @@
 
     function toCssClasses(numbers) {
       const cols = numbers ? numbers.split(' ') : []
-      console.log(cols);
       let classes = ''
 
       /*Criando nova literatura BootStrap no atributo class="" */
