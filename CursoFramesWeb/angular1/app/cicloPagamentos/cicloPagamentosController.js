@@ -1,30 +1,37 @@
 (function () {
   angular.module('primeiraApp').controller('CicloPagamentoCtrl', [
     '$http',
+    '$location',
     'msgs',
     'tabs',
     CicloPagamentoController
   ])
 
-  function CicloPagamentoController($http, msgs, tabs){
+  function CicloPagamentoController($http, $location, msgs, tabs){
     const vm = this
     const url = 'http://localhost:3003/api/cicloPagamento'
 
     /*Método GET*/
     vm.refresh = function () {
-      $http.get(url).then(function (response) {
+      const page = parseInt($location.search().page) || 1
+      $http.get(`${url}?skip=${(page - 1) * 10}&limit=10`).then(function (response) {
         /*Retorna pra ciclo de pagamentos com o objeto fazio*/
         vm.cicloPagamento = {creditos:[{}], debitos: [{}]}
         vm.cicloPagamentos = response.data
         vm.calculateValues()
         tabs.show(vm, {tabList: true, tabCreate: true})
-        console.log(response);
+        // console.log(response);
+
+        $http.get(`${url}/count`).then(function(response) {
+          vm.pages = Math.ceil(response.data.value / 10)
+        })
       })
     }
     /*Método POST*/
     vm.create = function () {
       $http.post(url, vm.cicloPagamento).then(function (response) {
         vm.cicloPagamento = {}
+        vm.refresh()
         msgs.addSuccess('Operação realizada com sucesso!!')
       }).catch(function (response) {
         //Errors foi definido no backend

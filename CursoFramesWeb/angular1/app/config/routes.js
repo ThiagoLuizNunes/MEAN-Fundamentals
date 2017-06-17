@@ -8,7 +8,7 @@
         url: "/dashboard",
         templateUrl: "dashboard/dashboard.html"
       }).state('cicloPagamentos', {
-        url: "/cicloPagamentos",
+        url: "/cicloPagamentos?page",
         templateUrl: "cicloPagamentos/tabs.html"
       })
 
