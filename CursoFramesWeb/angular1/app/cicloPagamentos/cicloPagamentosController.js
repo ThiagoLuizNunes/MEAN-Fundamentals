@@ -16,6 +16,7 @@
         /*Retorna pra ciclo de pagamentos com o objeto fazio*/
         vm.cicloPagamento = {creditos:[{}], debitos: [{}]}
         vm.cicloPagamentos = response.data
+        vm.calculateValues()
         tabs.show(vm, {tabList: true, tabCreate: true})
         console.log(response);
       })
@@ -54,11 +55,13 @@
     /*Método que exibe apenas a tabela EDITAR*/
     vm.showTabUpdate = function(cicloPagamento) {
       vm.cicloPagamento = cicloPagamento
+      vm.calculateValues()
       tabs.show(vm, {tabUpdate: true})
     }
     /*Método que exibe apenas a tabela EXCLUIR*/
     vm.showTabDelete = function(cicloPagamento) {
       vm.cicloPagamento = cicloPagamento
+      vm.calculateValues()
       tabs.show(vm, {tabDelete: true})
     }
 
@@ -68,10 +71,12 @@
     }
     vm.cloneCredito = function(index, {nome, valor}){
       vm.cicloPagamento.creditos.splice(index + 1, 0, {nome, valor})
+      vm.calculateValues()
     }
     vm.deleteCredito = function(index) {
       if(vm.cicloPagamento.creditos.length > 1){
         vm.cicloPagamento.creditos.splice(index, 1)
+        vm.calculateValues()
       }
     }
     /*Métodos DÉBITO*/
@@ -80,12 +85,32 @@
     }
     vm.cloneDebito = function(index, {nome, valor, status}){
       vm.cicloPagamento.debitos.splice(index + 1, 0, {nome, valor, status})
+      vm.calculateValues()
     }
     vm.deleteDebito = function(index) {
       if(vm.cicloPagamento.debitos.length > 1){
         vm.cicloPagamento.debitos.splice(index, 1)
+        vm.calculateValues()
       }
     }
+    vm.calculateValues = function() {
+      vm.credito = 0
+      vm.debito = 0
+
+      if(vm.cicloPagamento) {
+
+        vm.cicloPagamento.creditos.forEach(function({valor}) {
+          vm.credito +=  !valor || isNaN(valor) ? 0 : parseFloat(valor)
+        })
+
+        vm.cicloPagamento.debitos.forEach(function({valor}) {
+          vm.debito += !valor || isNaN(valor) ? 0 : parseFloat(valor)
+        })
+
+        vm.total = vm.credito - vm.debito
+      }
+    }
+
     vm.refresh()
   }
 })()

@@ -15,14 +15,14 @@
         </td>
         <td>
           <input ng-model="credito.valor" class="form-control" placeholder="Informe o valor"
-          ng-readonly="cpCtrl.tabDelete" type="number"/>
+          ng-change="cpCtrl.calculateValues()" ng-readonly="cpCtrl.tabDelete" type="number"/>
         </td>
         <td class="table-actions">
-          <button class="btn btn-success" ng-class="{disabled: cpCtrl.tabDelete}"
+          <button class="btn btn-success" ng-disabled="cpCtrl.tabDelete"
             ng-click="cpCtrl.addCredito($index)"><i class="fa fa-plus"></i></button>
-          <button class="btn btn-warning" ng-class="{disabled: cpCtrl.tabDelete}"
+          <button class="btn btn-warning" ng-disabled="cpCtrl.tabDelete"
             ng-click="cpCtrl.cloneCredito($index,credito)"><i class="fa fa-clone"></i></button>
-          <button class="btn btn-danger" ng-class="{disabled: cpCtrl.tabDelete}"
+          <button class="btn btn-danger" ng-disabled="cpCtrl.tabDelete"
             ng-click="cpCtrl.deleteCredito($index)"><i class="fa fa-trash-o"></i></button>
         </td>
       </tr>
