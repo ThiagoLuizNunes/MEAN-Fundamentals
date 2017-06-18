@@ -18,7 +18,6 @@ const sendErrorsFromDB = (res, dbErrors) => {
 const login = (req, res, next) => {
   const email = req.body.email || ''
   const password = req.body.password || ''
-  console.log('Dentro do login AUTH SERVICE');
   User.findOne({email}, (err, user) => {
     if(err) {
       return sendErrorsFromDB(res, err)

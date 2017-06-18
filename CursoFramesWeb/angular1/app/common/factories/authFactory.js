@@ -11,12 +11,9 @@
       submit('signup', user, callback)
     }
     function login(user, callback) {
-      console.log('Dentro FACTORY função LOGIN');
       submit('login', user, callback)
     }
     function submit(url, user, callback) {
-      console.log('Dentro FACTORY função SUBMIT');
-      // $http.post(`${consts.oapiUrl}/${url}`, user)
       $http.post(`${consts.oapiUrl}/${url}`, user)
         .then(resp => {
           localStorage.setItem(consts.userKey, JSON.stringify(resp.data))

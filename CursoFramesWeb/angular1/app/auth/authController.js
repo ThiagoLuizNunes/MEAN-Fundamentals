@@ -12,9 +12,7 @@
     vm.loginMode = true
     vm.changeMode = () => vm.loginMode = !vm.loginMode
 
-    console.log('Dentro do Controller AUTH');
     vm.login = () => {
-      console.log('Dentro do Controller função LOGIN');
       auth.login(vm.user, err => err ? msgs.addError(err) : msgs.addSuccess('Sucesso!'))
     }
     vm.signup = () => {
