@@ -1,26 +1,32 @@
 const express = require('express')
-
+const auth = require('auth')
 
 module.exports = function(server) {
-  //API routes
-  const router = express.Router()
-  server.use('/api', router)
+
+  /*
+  * Rotas API abertas
+  */
+  const openApi = express.Router()
+  server.use('/oapi', openApi)
+
+  const AuthService = require('../api/user/authService')
+  openApi.post('/login', AuthService.login)
+  openApi.post('/signup', AuthService.signup)
+  openApi.post('/validateToken', AuthService.validateToken)
+
+  /*
+  * Rotas API protegidas
+  */
+  const protectedApi = express.Router()
+  server.use('/api', protectedApi)
+
+  protectedApi.use(auth)
 
   //rotas da API
   const cicloPagamento = require('../api/cicloPagamento/cicloPagamentoService')
-  cicloPagamento.register(router, '/cicloPagamento')
+  cicloPagamento.register(protectedApi, '/cicloPagamento')
 
   const pagamentoSummaryService = require('../api/pagamentoSummary/pagamentoSummaryService')
-  router.route('/pagamentoSummary').get(pagamentoSummaryService.getSummary)
+  protectedApi.route('/pagamentoSummary').get(pagamentoSummaryService.getSummary)
+ 
 }
-
-// //API routes
-// const router = express.Router()
-// //rotas da API
-// const cicloPagamento = require('../api/cicloPagamento/cicloPagamentoService')
-// cicloPagamento.register(router, '/cicloPagamento')
-//
-// const pagamentoSummaryService = require('../api/pagamentoSummary/pagamentoSummaryService')
-// router.route('/pagamentoSummary').get(pagamentoSummaryService.getSummary)
-//
-// module.exports = router
