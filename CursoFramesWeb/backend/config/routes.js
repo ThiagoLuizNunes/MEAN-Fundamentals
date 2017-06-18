@@ -1,5 +1,5 @@
 const express = require('express')
-const auth = require('auth')
+const auth = require('./auth')
 
 module.exports = function(server) {
 
@@ -28,5 +28,5 @@ module.exports = function(server) {
 
   const pagamentoSummaryService = require('../api/pagamentoSummary/pagamentoSummaryService')
   protectedApi.route('/pagamentoSummary').get(pagamentoSummaryService.getSummary)
- 
+
 }

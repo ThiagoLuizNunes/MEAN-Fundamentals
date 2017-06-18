@@ -18,7 +18,7 @@ const sendErrorsFromDB = (res, dbErrors) => {
 const login = (req, res, next) => {
   const email = req.body.email || ''
   const password = req.body.password || ''
-
+  console.log('Dentro do login AUTH SERVICE');
   User.findOne({email}, (err, user) => {
     if(err) {
       return sendErrorsFromDB(res, err)
@@ -48,6 +48,7 @@ const signup = (req, res, next) => {
   const confirmPassword = req.body.confirm_password || ''
 
   if(!email.match(emailRegex)) {
+    console.log('email informado invalido');
     return res.status(400).send({errors: ['O e-mail informado está inválido']})
   }
 
