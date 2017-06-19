@@ -5,7 +5,7 @@ Learn about the fundamentals MEAN and building an application from scratch with 
 
 The projects can be found under this repository tree. For your convenience links to the projects can be found below.
 
- [CRUD PagamentosAPP](https://github.com/ThiagoLuizNunes/MEAN-Fundamentals/tree/master/PagamentosAPP)
+* [CRUD PagamentosAPP](https://github.com/ThiagoLuizNunes/MEAN-Fundamentals/tree/master/PagamentosAPP)
 
 * [Angular Examples](https://github.com/ThiagoLuizNunes/MEAN-Fundamentals/tree/master/angular_examples)
 
