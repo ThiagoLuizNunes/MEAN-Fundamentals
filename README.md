@@ -5,8 +5,8 @@ Learn about the fundamentals MEAN and building an application from scratch with 
 
 The projects can be found under this repository tree. For your convenience links to the projects can be found below.
 
-* [Angular Examples](https://github.com/ThiagoLuizNunes/MEAN-Fundamentals/tree/master/angular)
+* [Angular Examples](https://github.com/ThiagoLuizNunes/MEAN-Fundamentals/tree/master/angular_examples)
 
-* [Express Examples](https://github.com/ThiagoLuizNunes/MEAN-Fundamentals/tree/master/express)
+* [Express Examples](https://github.com/ThiagoLuizNunes/MEAN-Fundamentals/tree/master/express_examples)
 
-* [Node Examples](https://github.com/ThiagoLuizNunes/MEAN-Fundamentals/tree/master/node)
+* [Node Examples](https://github.com/ThiagoLuizNunes/MEAN-Fundamentals/tree/master/node_examples)
